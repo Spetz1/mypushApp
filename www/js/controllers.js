@@ -20,9 +20,9 @@ angular.module('starter.controllers', [])
       name: 'Test User',
       message: 'I come from planet Ion'
     });
-
+  
     $ionicUser.identify(user);
-      
+      }
       //Basic registration
     $scope.pushRegister = function() {
         alert('Registering...');
@@ -40,6 +40,5 @@ angular.module('starter.controllers', [])
         });
     }
     
-  }
-})
+  })
 
