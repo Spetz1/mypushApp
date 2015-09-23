@@ -15,7 +15,7 @@ angular.module('starter', ['ionic', 'ngCordova', 'ionic.service.core', 'starter.
     // Your GCM sender ID/project number (Uncomment if supporting Android)
     gcm_id: '671438420791',
       
-    dev_push: true  
+    dev_push: false  
       
   });
 

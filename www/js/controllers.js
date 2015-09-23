@@ -1,10 +1,19 @@
 angular.module('starter.controllers', [])
 
 .controller('AppCtrl', function($scope, $rootScope, $ionicPush, $ionicUser) {
+    
   $rootScope.$on('$cordovaPush:tokenReceived', function(event, data) {
     alert('Success: ' + data.token);
     console.log('Got token', data.token, data.platform);
   });
+    
+    $rootScope.$on('pushNotificationReceived',
+      function androidRegistration(event, data) {
+        var token = data.regid || undefined;
+            alert("pushNotificationReceived: " + token)
+        return token;
+      }
+    );
 
   $scope.identifyUser = function() {
     alert('Identifying');
@@ -22,9 +31,9 @@ angular.module('starter.controllers', [])
     });
   
     $ionicUser.identify(user);
-      }
+    }
       //Basic registration
-    $scope.pushRegister = function() {
+  $scope.pushRegister = function() {
         alert('Registering...');
 
         $ionicPush.register({
